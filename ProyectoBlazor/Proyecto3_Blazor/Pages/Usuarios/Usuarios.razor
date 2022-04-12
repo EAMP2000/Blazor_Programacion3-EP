@@ -1,4 +1,46 @@
 ﻿//Codigo HTML
-<h3>Usuarios</h3>
+
+@page "/Usuarios" //se accede a este componente al ponerlo asi en el URL
+
+<h3>Lista de Usuarios</h3>
+
+
+
+@if(usuariosLista == null){
+	<div class="spinner"></div>
+}else
+{
+	<table class="Table">
+		<thead>
+			<tr>                                    //tr filas, th Columnas
+				<th> CodigoUsuario</th>         
+				<th> Nombre</th>
+				<th> Rol</th>
+				<th> Activo</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var user in usuariosLista)
+			{
+				<tr>
+					<td>@user.CodigoUsuario</td>
+					<td>@user.Nombre</td>
+					<td>@user.Rol</td>
+					<td>
+						@if (user.Activo)
+						{
+							<span class= "oi oi-circle-check" style="color:green;"></span>
+						}
+						else
+						{
+							<span class= "oi oi-circle-x" style="color:red;"></span>
+						}
+					</td>
+				</tr>	
+			}
+		</tbody>
+	</table>		
+} 
+
 
 

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Datos.Repositorios
-{
+{  //se hereda la interfaz y se  implementan los metodos.
     public class UsuarioRepositorio : IUsuarioRepositorio
     {
         //Aqui se hara la conexion con la Base de Datos  🥵 
@@ -28,15 +28,8 @@ namespace Datos.Repositorios
 
 
 
+//################################ METODOS ###########################################
 
-
-
-
-
-
-
-
-        //Metodos
         public Task<bool> Actualizar(Usuario usuario)
         {
             throw new NotImplementedException();
